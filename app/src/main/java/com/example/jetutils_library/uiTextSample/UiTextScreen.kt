@@ -3,11 +3,13 @@ package com.example.jetutils_library.uiTextSample
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.jetutils_library.AppButton
 import com.example.jetutils_library.AppCenteredColumn
 import com.example.jetutils_library.R
 import com.lib.jetutils.UiText.UiText
+import com.lib.jetutils.UiText.VerticalSpacer
 import com.lib.jetutils.UiText.showToast
 
 val normalStringMessage = "Wow ! UiText is awesome !"
@@ -31,9 +33,13 @@ fun UiTextShowOff(
         AppButton(text = "Toast with normal String", onClick = {
             toast(context, normalStringMessage)
         })
+        // Using from library for spacing
+        VerticalSpacer(10.dp)
         AppButton(text = "Toast UiText with Dynamic String", onClick = {
             toast(context, uiTextMessage)
         })
+        // Using from library for spacing
+        VerticalSpacer(10.dp)
         AppButton(text = "Toast UiText with resource String", onClick = {
             toast(context, uiTextMessageWithResId)
         })

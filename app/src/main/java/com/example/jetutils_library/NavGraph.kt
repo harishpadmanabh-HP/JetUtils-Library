@@ -3,6 +3,7 @@ package com.example.jetutils_library
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import com.example.jetutils_library.uiTextSample.UiTextShowOff
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
@@ -22,7 +23,7 @@ fun MainNavGraph(
             MainScreen(navController)
         }
         composable(Routes.UiTextScreen){
-
+            UiTextShowOff(navController)
         }
     }
 
