@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JetUtils-Library</string>
+    <string name="uiTextSample">Yea ! You got strings from res without Context !!</string>
 </resources>
