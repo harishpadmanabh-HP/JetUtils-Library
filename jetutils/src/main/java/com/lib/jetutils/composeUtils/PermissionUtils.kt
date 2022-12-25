@@ -33,17 +33,15 @@ import com.lib.jetutils.R
 import com.lib.jetutils.utils.openAppSettings
 
 /**
-* Method to show the permission dialog with provided permissions.
+ * Method to show the permission dialog with provided permissions.
  * @param visible Mutable state to handle the visibility of the dialog.
  * @param permissions List of permissions.
  * @param permissionText The display text for the dialog box, if user don't have a specific ui for requesting.
  * @param enterTransition Enter Animation.
  * @param exitTransition Exit Animation.
- * @param notGrantedUi If user have a custom composable for requesting permission, then pass it here.
- * @param permanentlyDeniedUi If user have a custom composable for permanently denied permission, then pass it here.
  * @param onAllPermissionsEnabled invoked when all permissions are enabled.
-*/
-@OptIn(ExperimentalPermissionsApi::class)
+ */
+@OptIn(ExperimentalPermissionsApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun PermissionDialog(
     visible: MutableState<Boolean>,
@@ -51,8 +49,6 @@ fun PermissionDialog(
     permissionText: String? = null,
     enterTransition: EnterTransition = fadeIn(),
     exitTransition: ExitTransition = fadeOut(),
-    notGrantedUi: (@Composable () -> Unit)? = null,
-    permanentlyDeniedUi: (@Composable () -> Unit)? = null,
     onAllPermissionsEnabled: @Composable () -> Unit
 ) {
     val permissionState = rememberMultiplePermissionsState(permissions = permissions)
@@ -70,23 +66,15 @@ fun PermissionDialog(
         PermissionsRequired(
             multiplePermissionsState = permissionState,
             permissionsNotGrantedContent = {
-                if (notGrantedUi != null) {
-                    notGrantedUi()
-                } else {
-                    NonGrantedUi(text = permissionText, onRequestPermission = {
-                        permissionState.launchMultiplePermissionRequest()
-                    }, onDismiss = {
-                        checkPermission.value = false
-                    })
-                }
+                NonGrantedUi(text = permissionText, onRequestPermission = {
+                    permissionState.launchMultiplePermissionRequest()
+                }, onDismiss = {
+                    checkPermission.value = false
+                })
             }, permissionsNotAvailableContent = {
-                if (permanentlyDeniedUi != null) {
-                    permanentlyDeniedUi()
-                } else {
-                    PermanentlyDeniedUi(dismissPopup = {
-                        checkPermission.value = false
-                    })
-                }
+                PermanentlyDeniedUi(dismissPopup = {
+                    checkPermission.value = false
+                })
             }) {
             onAllPermissionsEnabled()
         }

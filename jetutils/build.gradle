@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
-        minSdk 23
-        targetSdk 32
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -37,7 +37,7 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.30'
+        kotlinCompilerVersion kotlin_version
     }
 }
 
@@ -46,7 +46,7 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_version"
     implementation "com.google.accompanist:accompanist-permissions:0.21.2-beta"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha05"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
 
 }
 afterEvaluate {
