@@ -166,7 +166,7 @@ private fun NonGrantedUi(text: String?, onRequestPermission: () -> Unit, onDismi
                             .padding(top = 12.dp)
                             .height(37.dp)   //add dynamic
                             .background(
-                                color = Color.Transparent,
+                                color = Color.Black,
                                 shape = RoundedCornerShape(8.dp)
                             )
                             .border(1.dp, Color.Black, RoundedCornerShape(8.dp))
@@ -179,7 +179,7 @@ private fun NonGrantedUi(text: String?, onRequestPermission: () -> Unit, onDismi
                         Text(
                             text = stringResource(id = R.string.request_permission_button),
                             style = TextStyle(
-                                color = Color.Black,
+                                color = Color.White,
                                 fontFamily = FontFamily.Default,
                                 fontSize = 14.sp,
                             ), modifier = Modifier.padding(horizontal = 14.dp)
@@ -280,7 +280,7 @@ private fun PermanentlyDeniedUi(dismissPopup: () -> Unit) {
                             .padding(top = 12.dp)
                             .height(37.dp)   //add dynamic
                             .background(
-                                color = Color.Transparent,
+                                color = Color.Black,
                                 shape = RoundedCornerShape(8.dp)
                             )
                             .border(1.dp, Color.Black, RoundedCornerShape(8.dp))
@@ -293,7 +293,7 @@ private fun PermanentlyDeniedUi(dismissPopup: () -> Unit) {
                         Text(
                             text = stringResource(id = R.string.open_app_settings),
                             style = TextStyle(
-                                color = Color.Black,
+                                color = Color.White,
                                 fontFamily = FontFamily.Default,
                                 fontSize = 14.sp,
                             ), modifier = Modifier.padding(horizontal = 14.dp)
