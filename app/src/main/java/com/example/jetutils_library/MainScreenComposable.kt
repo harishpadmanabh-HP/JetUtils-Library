@@ -1,5 +1,6 @@
 package com.example.jetutils_library
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,10 +17,15 @@ fun MainScreen(navController: NavHostController) {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(all = 24.dp)
+            .padding(all = 24.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         AppButton(text = "UiText", onClick = {
             navController.navigate(Routes.UiTextScreen)
+        })
+
+        AppButton(text = "Permission", onClick = {
+            navController.navigate(Routes.Permission)
         })
 
     }

@@ -1,6 +1,7 @@
 package com.example.jetutils_library.uiPermission
 
 import android.Manifest
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -29,35 +30,45 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.navigation.NavController
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.lib.jetutils.R
+import com.lib.jetutils.UiText.showToast
 import com.lib.jetutils.composeUtils.PermissionDialog
 import com.lib.jetutils.utils.openAppSettings
 
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun PermissionShowOff(navController: NavController) {
     val visible = remember {
         mutableStateOf(true)
     }
+    val context = LocalContext.current
     PermissionDialog(visible = visible, permissions = arrayListOf(
         Manifest.permission.READ_CONTACTS,
         Manifest.permission.CAMERA
     ), onPermissionNotAvailable = { deniedPermissions ->
-        // Permissions not granted
-        NonGrantedUi(
-            text = "Some title for non granted Ui",
-            onRequestPermission = { /*TODO*/ }) {
 
-        }
-
-    }, onPermissionNotGranted = { deniedPermissions ->
         // Permanently denied [rationale]
         PermanentlyDeniedUi {
             /*TODO*/
         }
 
+
+    }, onPermissionNotGranted = { deniedPermissions, permissionLauncherState ->
+
+        // Permissions not granted
+        NonGrantedUi(
+            text = "Message for the dialog",
+            onRequestPermission = {
+                permissionLauncherState.launchMultiplePermissionRequest()
+            }) {
+
+        }
+
     }) {
         // All permission granted
         /*TODO*/
+        context.showToast(message = "All permissions granted")
     }
 }
 

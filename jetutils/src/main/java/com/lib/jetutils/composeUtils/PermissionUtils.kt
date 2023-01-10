@@ -7,10 +7,12 @@ import androidx.compose.animation.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.MultiplePermissionsState
 import com.google.accompanist.permissions.PermissionsRequired
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 
 /**
+ *# Permissions
  * Method to show the permission dialog with provided permissions.
  * @param visible Mutable state to handle the visibility of the dialog.
  * @param permissions List of permissions.
@@ -24,10 +26,9 @@ import com.google.accompanist.permissions.rememberMultiplePermissionsState
 fun PermissionDialog(
     visible: MutableState<Boolean>,
     permissions: List<String>,
-    permissionText: String? = null,
     enterTransition: EnterTransition = fadeIn(),
     exitTransition: ExitTransition = fadeOut(),
-    onPermissionNotGranted: @Composable (deniedPermissions: List<String>) -> Unit,
+    onPermissionNotGranted: @Composable (deniedPermissions: List<String>, permissionLauncher: MultiplePermissionsState) -> Unit,
     onPermissionNotAvailable: @Composable (deniedPermissions: List<String>) -> Unit,
     onAllPermissionsEnabled: @Composable () -> Unit,
 ) {
@@ -46,7 +47,7 @@ fun PermissionDialog(
         PermissionsRequired(
             multiplePermissionsState = permissionState,
             permissionsNotGrantedContent = {
-                onPermissionNotGranted(LocalContext.current.findDeniedPermissions(permissions))
+                onPermissionNotGranted(LocalContext.current.findDeniedPermissions(permissions), permissionState)
             }, permissionsNotAvailableContent = {
                 // show UI for rationale
                 onPermissionNotAvailable(LocalContext.current.findDeniedPermissions(permissions))
