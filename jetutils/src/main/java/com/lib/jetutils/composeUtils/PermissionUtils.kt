@@ -24,7 +24,6 @@ import com.google.accompanist.permissions.rememberMultiplePermissionsState
 @OptIn(ExperimentalPermissionsApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun PermissionDialog(
-    visible: MutableState<Boolean>,
     permissions: List<String>,
     enterTransition: EnterTransition = fadeIn(),
     exitTransition: ExitTransition = fadeOut(),
@@ -34,12 +33,12 @@ fun PermissionDialog(
 ) {
     val permissionState = rememberMultiplePermissionsState(permissions = permissions)
 
-    var checkPermission by remember {
-        mutableStateOf(visible)
+    var showPermission = remember {
+        mutableStateOf(true)
     }
 
     AnimatedVisibility(
-        visible = checkPermission.value,
+        visible = showPermission.value,
         enter = enterTransition,
         exit = exitTransition
     ) {
@@ -52,6 +51,7 @@ fun PermissionDialog(
                 // show UI for rationale
                 onPermissionNotAvailable(LocalContext.current.findDeniedPermissions(permissions))
             }) {
+            showPermission.value = false
             onAllPermissionsEnabled()
         }
     }
