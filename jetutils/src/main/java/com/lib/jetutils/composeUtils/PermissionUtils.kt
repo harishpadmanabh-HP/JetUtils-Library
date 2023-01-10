@@ -58,6 +58,11 @@ fun PermissionDialog(
     }
 }
 
+/**
+* Method to find the denied permissions
+ * @param requestedPermissions permission requested by the user
+ * @return list of denied permission
+*/
 private fun Context.findDeniedPermissions(requestedPermissions: List<String>): List<String> {
     val deniedPermissions = arrayListOf<String>()
     requestedPermissions.forEach { permission ->
