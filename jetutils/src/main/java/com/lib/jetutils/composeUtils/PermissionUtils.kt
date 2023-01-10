@@ -14,11 +14,12 @@ import com.google.accompanist.permissions.rememberMultiplePermissionsState
 /**
  *# Permissions
  * Method to show the permission dialog with provided permissions.
- * @param visible Mutable state to handle the visibility of the dialog.
  * @param permissions List of permissions.
  * @param permissionText The display text for the dialog box, if user don't have a specific ui for requesting.
  * @param enterTransition Enter Animation.
  * @param exitTransition Exit Animation.
+ * @param onPermissionNotGranted invoked when any of the permission is denied.
+ * @param onPermissionNotAvailable invoked when the permission is not available. (showing rationale)
  * @param onAllPermissionsEnabled invoked when all permissions are enabled.
  */
 @OptIn(ExperimentalPermissionsApi::class, ExperimentalAnimationApi::class)
