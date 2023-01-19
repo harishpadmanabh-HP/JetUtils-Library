@@ -2,7 +2,6 @@ package com.lib.jetutils.UiText
 
 import android.content.Context
 import android.widget.Toast
-import java.time.Duration
 
 /**
  *# Ui Text

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!--Values that concern height of the screen-->
+
+<resources>
+    <dimen name="titleTextSize">24sp</dimen>
+    <dimen name="subHeadingTextSize">16sp</dimen>
+    <dimen name="screenBottomPadding">40dp</dimen>
+    <dimen name="OnboardingTitleTextSize">22sp</dimen>
+    <dimen name="buttonHeightPadding">8dp</dimen>
+    <dimen name="longDescTextSize">14sp</dimen>
+    <dimen name="padding4">4dp</dimen>
+    <dimen name="padding40">40dp</dimen>
+    <dimen name="padding20">20dp</dimen>
+    <dimen name="screenHorizontalPadding">20dp</dimen>
+    <dimen name="backImageSize">44dp</dimen>
+    <dimen name="padding44">44dp</dimen>
+    <dimen name="padding14">14dp</dimen>
+    <item name="percent90" type="dimen">90%</item>
+    <dimen name="padding16">16dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding24">24dp</dimen>
+    <dimen name="googleButtonSize">30dp</dimen>
+    <dimen name="onboardingBottomPadding">54dp</dimen>
+    <dimen name="padding68">68dp</dimen>
+    <dimen name="padding34">34dp</dimen>
+    <dimen name="dpImageSize">56dp</dimen>
+    <dimen name="dpSize">45dp</dimen>
+    <dimen name="square22">22dp</dimen>
+    <dimen name="square48">48dp</dimen>
+    <dimen name="square32">32dp</dimen>
+    <dimen name="textSize18">18sp</dimen>
+    <dimen name="square61">61dp</dimen>
+    <dimen name="square18">18dp</dimen>
+    <dimen name="dp130">130dp</dimen>
+    <dimen name="dp92">92dp</dimen>
+    <dimen name="textSize12">12sp</dimen>
+    <dimen name="bottomNavBarHeight">80dp</dimen>
+    <dimen name="square24">24dp</dimen>
+    <dimen name="bottomNavCurve">28dp</dimen>
+    <dimen name="bottomNavItemSize">12sp</dimen>
+    <dimen name="bottomNavIconTextSpacing">7dp</dimen>
+    <dimen name="textSize16">16sp</dimen>
+    <dimen name="square34">34dp</dimen>
+    <dimen name="searchBarHeight">50dp</dimen>
+    <dimen name="smallButtonHeightPadding">6dp</dimen>
+    <item name="percent8" type="dimen">8%</item>
+    <item name="percent15" type="dimen">15%</item>
+    <item name="percent12" type="dimen">12%</item>
+    <dimen name="textSize32">32sp</dimen>
+    <dimen name="square124">124dp</dimen>
+    <dimen name="square36">36dp</dimen>
+    <dimen name="square160">160dp</dimen>
+
+</resources>

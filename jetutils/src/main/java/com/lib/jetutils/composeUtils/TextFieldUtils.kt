@@ -14,6 +14,7 @@ private fun TextFieldValue.isCursorAtTheEnd(): Boolean {
     val isCursorAtTheEnd = text.length == selection.end
     return hasNoSelection && isCursorAtTheEnd
 }
+
 @OptIn(ExperimentalComposeUiApi::class)
 private fun androidx.compose.ui.input.key.KeyEvent.isCtrlBackspace() =
     (key == Key.Backspace || key == Key.Enter || key == Key.Delete
@@ -24,7 +25,7 @@ private fun androidx.compose.ui.input.key.KeyEvent.isCtrlBackspace() =
 fun Modifier.persistShortKeyForInput(input: TextFieldValue): Modifier {
     return onPreviewKeyEvent { event ->
         // Returns true to mark the event as handled and stop its propagation.
-            when {
+        when {
             // Temporary fix for https://github.com/JetBrains/compose-jb/issues/565.
             // To repro, press CTRL/Option+backspace on an empty TextField.
             event.isCtrlBackspace() && input.text.isEmpty() -> true

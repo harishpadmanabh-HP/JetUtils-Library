@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><!--Values that concern width of the screen-->
+
+<resources>
+    <dimen name="roleCardSize">90dp</dimen>
+    <item name="logoWidthReducer" type="dimen">15%</item>
+
+</resources>

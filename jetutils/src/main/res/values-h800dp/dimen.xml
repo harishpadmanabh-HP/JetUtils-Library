@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><!--Values that concern height of the screen  larger screens-->
+
+<resources>
+
+    <dimen name="onboardingBottomPadding">62dp</dimen>
+
+</resources>

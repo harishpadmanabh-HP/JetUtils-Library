@@ -1,6 +1,5 @@
 package com.lib.jetutils.NetworkUtils
 
-import androidx.compose.runtime.R
 import com.lib.jetutils.UiText.UiText
 
 /**

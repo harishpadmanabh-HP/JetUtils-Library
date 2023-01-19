@@ -47,7 +47,10 @@ fun PermissionDialog(
         PermissionsRequired(
             multiplePermissionsState = permissionState,
             permissionsNotGrantedContent = {
-                onPermissionNotGranted(LocalContext.current.findDeniedPermissions(permissions), permissionState)
+                onPermissionNotGranted(
+                    LocalContext.current.findDeniedPermissions(permissions),
+                    permissionState
+                )
             }, permissionsNotAvailableContent = {
                 // show UI for rationale
                 onPermissionNotAvailable(LocalContext.current.findDeniedPermissions(permissions))
@@ -59,10 +62,10 @@ fun PermissionDialog(
 }
 
 /**
-* Method to find the denied permissions
+ * Method to find the denied permissions
  * @param requestedPermissions permission requested by the user
  * @return list of denied permission
-*/
+ */
 private fun Context.findDeniedPermissions(requestedPermissions: List<String>): List<String> {
     val deniedPermissions = arrayListOf<String>()
     requestedPermissions.forEach { permission ->
