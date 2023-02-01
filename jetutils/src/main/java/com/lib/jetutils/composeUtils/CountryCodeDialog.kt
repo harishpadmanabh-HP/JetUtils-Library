@@ -42,6 +42,12 @@ import androidx.emoji.widget.EmojiTextView
 import com.lib.jetutils.colors.*
 import com.lib.jetutils.utils.*
 
+/**
+ * Composable for custom country dialog
+ * @param dialogProperties Dialog properties for the dialog box
+ * @param onDismiss Callback for onDismiss method
+ * @param content Custom composable
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun CustomCountryCodeDialog(
@@ -65,6 +71,12 @@ fun CustomCountryCodeDialog(
     }
 }
 
+/**
+ * Composable for country code dialog
+ * @param dialogProperties Dialog properties for the dialog box
+ * @param onCountrySelected Triggers when user select a country from the list
+ * @param onDismiss Callback for onDismiss method
+ */
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun CountryCodeDialog(
@@ -205,7 +217,7 @@ fun CountryCodeDialog(
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalAnimationApi::class)
 @Composable
-fun NationalityDialog(
+private fun NationalityDialog(
     dialogProperties: DialogProperties = DialogProperties(
         dismissOnBackPress = true,
         dismissOnClickOutside = true,
@@ -331,15 +343,22 @@ fun NationalityDialog(
     }
 }
 
-
+/**
+ * Composable for Search bar with trailing icon
+ * @param hint Hint for the search text input
+ * @param defaultValue Default value for the search text (optional)
+ * @param onSubmitQuery Invoked when user hits the done key in the keyboard
+ * @param onQueryChange Invoked when user inputs value to the text field.
+ * @param modifier Modifier for the composable
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun TrailingIconSearchBar(
+    modifier: Modifier = Modifier,
     hint: String,
     defaultValue: String = "",
     onSubmitQuery: (String) -> Unit = {},
     onQueryChange: (String) -> Unit = {},
-    modifier: Modifier = Modifier.padding()
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
 
@@ -371,6 +390,16 @@ fun TrailingIconSearchBar(
 
 }
 
+/**
+ * Composable for custom search text field
+ * @param modifier Modifier for the composable
+ * @param defaultValue Default text field value
+ * @param leadingIcon Leading icon for the search text field (optional)
+ * @param trailingIcon Trailing icon for the search text field (optional)
+ * @param placeholderText Placeholder(Hint) for the search text field
+ * @param onSubmitQuery Invoked when user hits the done key in the keyboard
+ * @param onQueryChange Invoked when user inputs value to the text field.
+ */
 @Composable
 private fun CustomSearchTextField(
     modifier: Modifier = Modifier,
@@ -429,10 +458,16 @@ private fun CustomSearchTextField(
     )
 }
 
+/**
+* Composable which is loaded for empty list
+ * @param modifier Modifier for the composable
+ * @param message Message to display
+ * @param textFontSize Font size of the message
+*/
 @Composable
 fun EmptyListComposable(
-    message: String,
     modifier: Modifier = Modifier,
+    message: String,
     textFontSize: TextUnit = fontDimensionResource(id = com.lib.jetutils.R.dimen.textSize18)
 ) {
     Column(

@@ -24,7 +24,7 @@ object Routes {
 fun MainNavGraph(
     navController: NavHostController = rememberAnimatedNavController(),
 ) {
-    AnimatedNavHost(navController = navController, startDestination = Routes.CountryCodeDialog) {
+    AnimatedNavHost(navController = navController, startDestination = Routes.Permission) {
         composable(Routes.MainScreen) {
             MainScreen(navController)
         }

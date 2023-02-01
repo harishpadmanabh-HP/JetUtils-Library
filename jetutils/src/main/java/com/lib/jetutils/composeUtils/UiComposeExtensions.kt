@@ -1,4 +1,4 @@
-package com.lib.jetutils.UiText
+package com.lib.jetutils.composeUtils
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

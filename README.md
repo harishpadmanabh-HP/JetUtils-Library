@@ -11,6 +11,22 @@ Library providing the starter utils for projects
    })
   ```
 
+### Permission dialog
+#### Here we included a composable for permission dialog.
+> Loading Permission dialog composable
+  ```
+  PermissionDialog(permissions = arrayListOf(
+        Manifest.permission.READ_CONTACTS,
+        Manifest.permission.CAMERA
+    ), onPermissionNotAvailable = { deniedPermissions ->
+    // permission denied.
+    }, onPermissionNotGranted = { deniedPermissions, permissionLauncherState ->
+    // permission not granted.
+    }, onAllPermissionsEnabled = {
+    // when all permissions enabled.    
+    }) 
+  ```
+
 ### Network Extension
 #### Here we included a network extension for api calls.
 > Perform Api call

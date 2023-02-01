@@ -9,7 +9,7 @@ import com.example.jetutils_library.AppButton
 import com.example.jetutils_library.AppCenteredColumn
 import com.example.jetutils_library.R
 import com.lib.jetutils.UiText.UiText
-import com.lib.jetutils.UiText.VerticalSpacer
+import com.lib.jetutils.composeUtils.VerticalSpacer
 import com.lib.jetutils.UiText.showToast
 
 val normalStringMessage = "Wow ! UiText is awesome !"
