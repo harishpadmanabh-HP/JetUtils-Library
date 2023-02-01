@@ -1,6 +1,16 @@
 # JetUtils-Library
 Library providing the starter utils for projects
 
+### Country code dialog
+#### Here we included a composable for country code dialog with flag emojis.
+![dialog](https://user-images.githubusercontent.com/87296765/215941540-121fd819-bc6e-445b-80df-0df488460210.gif)
+> Loading Dialog composable
+  ```
+  CountryCodeDialog(onCountrySelected = { country -> 
+                
+   })
+  ```
+
 ### Network Extension
 #### Here we included a network extension for api calls.
 > Perform Api call
@@ -29,7 +39,7 @@ Library providing the starter utils for projects
             response.ifSuccess { freeApiModel ->
                 // do the operations after api success 
             }
-            response.ifFailed { code, message ->
+            response.ifFailed { uiText ->
                 // do the operations on api failed 
             }
         }
